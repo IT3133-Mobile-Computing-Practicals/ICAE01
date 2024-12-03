@@ -1,13 +1,17 @@
 import '../assets/CSS/layout.css';
+import {flowers} from './FlowerDB';
+
 export default function Product(){
     
     return(
+        flowers.map(flower=>
         <div className="grid-item">
 
             <div class="card">
-                <img  />
+                <img  src={require("../assets/image/" + flower.img)}  />
+
                 <div class="card-body">
-                    <h5 class="card-title">Price:</h5>
+                    <h5 class="card-title">{flower.name} Price:{flower.price}</h5>
                     <div class="quantity-container">
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" />
@@ -16,5 +20,6 @@ export default function Product(){
                 </div>
             </div>
         </div>
+        )
     );
 }
