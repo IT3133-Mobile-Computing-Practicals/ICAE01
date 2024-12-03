@@ -5,10 +5,21 @@ import {useState} from 'react';
 
 export default function Product(props){
    
- //const[inputValue,setInputValue]=useState();
- //const [cart,setCart]=useState();
+ const[inputValue,setInputValue]=useState();
+ const[cart,setCart]=useState([]);
+ 
+ const addCart = (flowerId, quantity) => {
+    
+    const item = {
+        flowerId: flowerId,
+        quantity: parseInt(quantity),
+    };
 
-   
+    const updatedCart = [...cart, item];
+    setCart(updatedCart);
+    props.setCart(updatedCart); 
+};
+ 
 
     return(
         flowers.map(flower=>
@@ -24,10 +35,10 @@ export default function Product(props){
 
                         <label for="quantity">Quantity:</label>
 
-                        <input type="number" id="quantity" name="quantity"  onChange={(e)=>props.setoutput(e.target.value)}/>
+                        <input type="number" id="quantity" name="quantity"  onChange={(e)=>setInputValue(e.target.value)}/>
 
                     </div>
-                    <button class="card-button" onClick={()=>props.setFlower(flower)}>Add to Cart</button>
+                    <button class="card-button" onClick={()=>addCart(flower.id,inputValue)}>Add to Cart</button>
                 </div>
             </div>
         </div>

@@ -1,29 +1,23 @@
 export default function Cart(props) {
-    
     return (
         <div className="table-container">
             <h4 className="card-title">Cart</h4>
             <table>
                 <thead>
-
-                    <td>Product</td>
-                    <td>QTY</td>
-                    <td>Price</td>
-
-                </thead>
-                {
                     <tr>
-                        <td>{props.getFlower.name}</td>
-                        <td>{props.output}</td>
-                        <td></td>
+                        <td>Product</td>
+                        <td>QTY</td>
                     </tr>
-                }
-                <tr>
-                    <td >Grand Total : </td>
-                    <td colSpan={2}>Grand Total</td>
-                </tr>
+                </thead>
+                <tbody>
+                    {props.getCart.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.flowerId}</td>
+                            <td>{item.quantity}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
-           
         </div>
     );
 }

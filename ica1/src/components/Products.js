@@ -6,8 +6,8 @@ import {useState} from 'react';
 
 export default function Products(){
 
-    const[output,setoutput]=useState("");
-    const[getFlower,setFlower]=useState("");
+    const[getCart,setCart]=useState([]);
+    
 
     
 
@@ -21,14 +21,14 @@ export default function Products(){
                 <h4 className="card-title">Buy flowers</h4>
                 <div className="grid-container">
                     {
-                        <Product setoutput={setoutput} setFlower={setFlower}/>
+                        <Product setCart={setCart}/>
                     }
                 </div>
 
             </div>
             <div className="item3">
                 {
-                    <Cart output={output} getFlower={getFlower}/>
+                    <Cart getCart={getCart}/>
                 }
             </div>
         </>
