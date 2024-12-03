@@ -7,13 +7,15 @@ export default function Cart(props) {
                     <tr>
                         <td>Product</td>
                         <td>QTY</td>
+                        <td>Price</td>
                     </tr>
                 </thead>
                 <tbody>
                     {props.getCart.map((item, index) => (
                         <tr key={index}>
-                            <td>{item.flowerId}</td>
+                            <td>{item.flowerName}</td>
                             <td>{item.quantity}</td>
+                            <td>{item.quantity*item.flowerPrice}</td>
                         </tr>
                     ))}
                 </tbody>

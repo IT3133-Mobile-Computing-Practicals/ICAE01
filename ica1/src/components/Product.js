@@ -8,10 +8,11 @@ export default function Product(props){
  const[inputValue,setInputValue]=useState();
  const[cart,setCart]=useState([]);
  
- const addCart = (flowerId, quantity) => {
+ const addCart = (flowerName,flowerPrice, quantity) => {
     
     const item = {
-        flowerId: flowerId,
+        flowerName: flowerName,
+        flowerPrice:flowerPrice,
         quantity: parseInt(quantity),
     };
 
@@ -38,7 +39,7 @@ export default function Product(props){
                         <input type="number" id="quantity" name="quantity"  onChange={(e)=>setInputValue(e.target.value)}/>
 
                     </div>
-                    <button class="card-button" onClick={()=>addCart(flower.id,inputValue)}>Add to Cart</button>
+                    <button class="card-button" onClick={()=>addCart(flower.name,flower.price,inputValue)}>Add to Cart</button>
                 </div>
             </div>
         </div>
