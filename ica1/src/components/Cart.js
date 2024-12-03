@@ -1,4 +1,4 @@
-export default function Cart() {
+export default function Cart(props) {
     
     return (
         <div className="table-container">
@@ -12,7 +12,11 @@ export default function Cart() {
 
                 </thead>
                 {
-                    
+                    <tr>
+                        <td>{props.output}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 }
                 <tr>
                     <td >Grand Total : </td>

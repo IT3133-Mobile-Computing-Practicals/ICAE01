@@ -3,14 +3,13 @@ import {flowers} from './FlowerDB';
 import {useState} from 'react';
 
 
-export default function Product(){
+export default function Product(props){
    
- const[inputValue,setInputValue]=useState();
+ //const[inputValue,setInputValue]=useState();
+ //const [cart,setCart]=useState();
 
-    const handlechange = (e) =>{
-        setInputValue(e.target.value)
-    }
-    
+   
+
     return(
         flowers.map(flower=>
         <div className="grid-item">
@@ -25,7 +24,7 @@ export default function Product(){
 
                         <label for="quantity">Quantity:</label>
 
-                        <input type="number" id="quantity" name="quantity" value={inputValue} onChange={handlechange}/>
+                        <input type="number" id="quantity" name="quantity"  onChange={(e)=>props.setoutput(e.target.value)}/>
 
                     </div>
                     <button class="card-button">Add to Cart</button>

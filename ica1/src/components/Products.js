@@ -6,11 +6,10 @@ import {useState} from 'react';
 
 export default function Products(){
 
-    const[cart,sett]=useState();
+    const[output,setoutput]=useState("");
 
-    const handlecahnge = (e) =>{
+    
 
-    }
    
     return(
         <>
@@ -21,14 +20,14 @@ export default function Products(){
                 <h4 className="card-title">Buy flowers</h4>
                 <div className="grid-container">
                     {
-                        <Product/>
+                        <Product setoutput={setoutput}/>
                     }
                 </div>
 
             </div>
             <div className="item3">
                 {
-                    <Cart/>
+                    <Cart output={output}/>
                 }
             </div>
         </>
