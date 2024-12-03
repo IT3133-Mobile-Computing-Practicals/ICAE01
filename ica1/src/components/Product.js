@@ -27,7 +27,7 @@ export default function Product(props){
                         <input type="number" id="quantity" name="quantity"  onChange={(e)=>props.setoutput(e.target.value)}/>
 
                     </div>
-                    <button class="card-button">Add to Cart</button>
+                    <button class="card-button" onClick={()=>props.setFlower(flower)}>Add to Cart</button>
                 </div>
             </div>
         </div>

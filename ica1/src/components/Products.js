@@ -7,6 +7,7 @@ import {useState} from 'react';
 export default function Products(){
 
     const[output,setoutput]=useState("");
+    const[getFlower,setFlower]=useState("");
 
     
 
@@ -20,14 +21,14 @@ export default function Products(){
                 <h4 className="card-title">Buy flowers</h4>
                 <div className="grid-container">
                     {
-                        <Product setoutput={setoutput}/>
+                        <Product setoutput={setoutput} setFlower={setFlower}/>
                     }
                 </div>
 
             </div>
             <div className="item3">
                 {
-                    <Cart output={output}/>
+                    <Cart output={output} getFlower={getFlower}/>
                 }
             </div>
         </>

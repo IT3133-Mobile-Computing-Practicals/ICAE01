@@ -13,8 +13,8 @@ export default function Cart(props) {
                 </thead>
                 {
                     <tr>
+                        <td>{props.getFlower.name}</td>
                         <td>{props.output}</td>
-                        <td></td>
                         <td></td>
                     </tr>
                 }
