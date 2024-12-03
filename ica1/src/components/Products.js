@@ -2,9 +2,15 @@
 import '../assets/CSS/layout.css';
 import Cart from './Cart';
 import Product from './Product';
-
+import {useState} from 'react';
 
 export default function Products(){
+
+    const[cart,sett]=useState();
+
+    const handlecahnge = (e) =>{
+
+    }
    
     return(
         <>
